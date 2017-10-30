@@ -257,7 +257,7 @@ while($row=mysql_fetch_assoc($result))
 mysql_free_result($result);
 //mysql_close($con);
 /************************END PHP for Blog 0****************************************************/
-
+//Git Test
 ?>	
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
