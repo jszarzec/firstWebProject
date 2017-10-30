@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title> Welcome </title>
+        <script language = "JavaScript" src="js/newScript.js"></script>
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/newCSS.css" rel="stylesheet">
+        
+    
+	
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+    </head>
+
+    <body>
+        <!-- Navigation -->
+        <div class="w3-bar w3-light-grey">
+                <a href="index.html" class="w3-bar-item w3-button w3-mobile">Home</a>
+                <a href="blog.html" class="w3-bar-item w3-button w3-mobile">Blog</a>
+                <a href="#" class="w3-bar-item w3-button w3-mobile">Link 2</a>
+                <a href="#" id="hiddenLink" class="w3-bar-item w3-button w3-mobile">Returning User</a>
+                <div id="mainNav" class="w3-right w3-mobile">
+                <div class="w3-dropdown-hover  w3-light-grey">
+                    <button class="w3-button">Returning User</button>
+                    <div class="w3-dropdown-content w3-bar-block w3-card-4" >
+                        <form>
+                        <input type="text" class="w3-bar-item w3-input" placeholder="Name.."><br>
+                        <input type="password" class="w3-bar-item w3-input" placeholder="Password.."><br>
+                        <input type="submit" class="w3-bar-item w3-input" value="submit">
+                        </form>
+                    </div>
+                </div>
+            </div>    
+        </div><!--end navbar-->
+        <h1 align="center"> Blog </h1>
+
+<!--Blog 0 -->
+        <div class="w3-col s6" style="margin-left:25%" name="blogDiv">
+            <h2><a href = "#" onClick="showParagraph()">First Blog Entry</a></h2>
+            
+            <p id="p0">Here is some blog content it will repeat to make itself longer
+            Here is some blog content it will repeat to make itself longer
+            Here is some blog content it will repeat to make itself longer.
+            Here is some blog content it will repeat to make itself longer.
+            Here is some blog content it will repeat to make itself longer.
+            Here is some blog content it will repeat to make itself longer.
+            Here is some blog content it will repeat to make itself longer.
+            </p>
+            <br> 
+            <p id="txtCommentOutput"></p>
+       
+            <br>
+            <div class="w3-col s6" id="button">
+                <input type="button" onclick="hideParagraph()" value="hide" id="hide">
+                <input type="button" onclick="showForm()" value="comment" id="comment">
+            </div>    
+           
+           <!-- HTML VERSION -->
+           <form name="frmAddComment" class="frmHide">
+                <div class="w3-col s6">
+                    <textarea name="txtComment" rows="5" cols="25"></textarea><br>
+                    <input type="button" onclick="return addComment();" value="submit">
+                </div>
+            </form>   
+          
+        </div>   
+        
+        <script> displayComment(); </script>
+            
+          
+                
+              
+    
+    
+        

@@ -1,0 +1,102 @@
+h1:hover
+{
+    color: blue;
+    
+}
+
+/*show right nav item*/
+@media screen and (min-width: 600px){
+    #mainNav
+        {
+            padding-right:10%;
+        }
+}
+
+/*hide right nav item*/
+@media screen and (max-width: 600px){
+    #mainNav
+    {
+        display: none;
+    } 
+}
+/*show login on small screens*/
+@media screen and (min-width: 600px){
+    #hiddenLink
+        {
+            display:none;
+        }
+}
+
+
+a
+{
+    color: black;
+    text-decoration: none;
+}
+
+input:hover
+{
+color:blue;
+}
+
+
+#pictures
+{
+    /*margin-left: 25%;*/
+    width:40%;
+    height:auto;
+    display: block;
+}
+.buttonPics{
+    
+    margin-left:36%;
+   
+}
+
+/* ***************Blog 0****************/
+#button
+{
+    display: none;
+}
+#p0
+{
+    display: none;
+}
+
+.frmHide
+{
+    display:none;
+}
+
+#txtCommentOutput
+{
+    display: none;
+}
+
+/******************* Blog 1 *****************/
+#button1
+{
+    display: none;
+}
+#p1
+{
+    display: none;
+}
+#txtCommentOutput1
+{
+    display: none;
+}
+
+/******************* Blog 2 *****************/
+#button2
+{
+    display: none;
+}
+#p2
+{
+    display: none;
+}
+#txtCommentOutput2
+{
+    display: none;
+}
