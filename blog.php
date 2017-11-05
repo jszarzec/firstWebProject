@@ -205,12 +205,25 @@ function validateForm()
 include("php/loadComment.php");
 include("php/loadComment1.php");
 include("php/loadComment2.php");
+echo $admin;
 ?>
     
-    <?php 
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+    
+
+<body>
+<?php 
 include("inc/nav2.inc");
 echo "<h1 align ='center'> Blog </h1>";
-echo $admin;
+
 
 /**************************Blog 0***************************/
 include('inc/dbc.php');
@@ -234,48 +247,23 @@ while($row=mysql_fetch_assoc($result))
 {
     echo "<div class='w3-col s6' style='margin-left:25%'>";
     echo "<h2 id = 'h0' onclick ='showParagraph();'> Hello " .$row['Title']. " Read! </h2>";
-    echo "<p id = 'p0'> Hello " .$row['Message']. " Read! </p0>";
-    echo "</div>";
-    echo "<script = 'javascript'>";
-        //echo "document.getElementById('h0').innerHTML='Hello!!'; ";
-        //echo " ";
-    echo "</script>";
-    /* echo "<div class='w3-col s6' style='margin-left:25%' name='blogDiv'>";
-    echo "<h2><a href = '#' onClick='showParagraph()'>" .$row["Title"] . "</h2>";
-    echo "<p id='p0'>" .$row["Message"]. "</p>";
+    echo "<p id = 'p0'> " .$row['Message']. "</p>";
+    
     if(isset($admin))
     {
-        echo "<p><a href = 'edit.php?id=".$row["Id"]."&table=Blog'>edit</a></p>";
-        echo "<p><a href = 'logout.php'>finish</a></p>";
+        echo "<p><a href = 'edit.php?id=".$row["Id"]."&table=Blog'>edit 1</a></p>";
+        echo "<p><a href = 'logout.php'>finish 1</a></p>";
     }
-    echo "</div>";*/
+    echo "</div>";
 }
 
-   
-    
-
 mysql_free_result($result);
-//mysql_close($con);
+
 /************************END PHP for Blog 0****************************************************/
-//Git Test
+
+
 ?>	
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
-    
-
-<body>
    
-
-<h1 align="center"> Blog </h1>
-    
-<!--********************************************Blog 0****************************** -->
-       
 
     <div class="w3-col s6" style="margin-left:25%" name="blogDiv">
     <!--<h2 id="h0"><a href = "#" onClick="showParagraph()">First Blog Entry</a></h2>
@@ -319,9 +307,48 @@ mysql_free_result($result);
         <script> displayComment(); </script> 
                 
  <!--*********************************Blog 1************************************** -->
+
+<?php 
+include('inc/dbc.php');
+
+//prepare and execute query
+ $query = "select * from jszarzec_AddressBook.Blog where Id = '2';";
+ $result = mysql_query($query,$con);
+ 
+ //check to see if we got a result
+ //No result means something is wrong
+ if($result == false)
+    echo "<p> Error executing query. </p>";
+
+//check to see if we got any data back
+if (mysql_num_rows($result) == 0)
+    echo "<p> No data returned. </p>";
+
+//get data from result set.
+
+while($row=mysql_fetch_assoc($result))
+{
+    echo "<div class='w3-col s6' style='margin-left:25%'>";
+    echo "<h2 id = 'h1' onclick ='showParagraph1();'>" .$row['Title']. " </h2>";
+    echo "<p id = 'p1'> Hello " .$row['Message']. " Read! </p>";
+   
+    if(isset($admin))
+    {
+        echo "<p><a href = 'edit.php?id=".$row["Id"]."&table=Blog'>edit 2</a></p>";
+        echo "<p><a href = 'logout.php'>finish 2</a></p>";
+    }
+    echo "</div>";
+}
+
+mysql_free_result($result);
+
+/************************END PHP for Blog 1****************************************************/
+
+
+?>
         
         <div class="w3-col s6" style="margin-left:25%" name="blogDiv">
-            <h2><a href = "#" onClick="showParagraph1()">Second Blog Entry</a></h2>
+            <!--<h2><a href = "#" onClick="showParagraph1()">Second Blog Entry</a></h2>
         
             <p id="p1">Here is some 2nd blog content it will repeat to make itself longer
             Here is some blog content it will repeat to make itself longer
@@ -331,7 +358,7 @@ mysql_free_result($result);
             Here is some blog content it will repeat to make itself longer.
             Here is some blog content it will repeat to make itself longer.
             <br>
-            <span style="color:red"> Please add Comments Here: </span>
+            <span style="color:red"> Please add Comments Here: </span>-->
             </p>
             <br> 
             <p id="txtCommentOutput1"></p>
@@ -360,11 +387,52 @@ mysql_free_result($result);
             
                            
         <script> displayComment1(); </script>
+ 
+<!--*********************************Blog 2************************************** -->
 
-        <!--*********************************Blog 2************************************** -->
+ 
+
+ <?php 
+include('inc/dbc.php');
+
+//prepare and execute query
+ $query = "select * from jszarzec_AddressBook.Blog where Id = '3';";
+ $result = mysql_query($query,$con);
+ 
+ //check to see if we got a result
+ //No result means something is wrong
+ if($result == false)
+    echo "<p> Error executing query. </p>";
+
+//check to see if we got any data back
+if (mysql_num_rows($result) == 0)
+    echo "<p> No data returned. </p>";
+
+//get data from result set.
+
+while($row=mysql_fetch_assoc($result))
+{
+    echo "<div class='w3-col s6' style='margin-left:25%'>";
+    echo "<h2 id = 'h2' onclick ='showParagraph2();'>" .$row['Title']. " </h2>";
+    echo "<p id = 'p2'> " .$row['Message']. "  </p>";
+    
+    if(isset($admin))
+    {
+        echo "<p><a href = 'edit.php?id=".$row["Id"]."&table=Blog'>edit 3 </a></p>";
+        echo "<p><a href = 'logout.php'>finish 3 </a></p>";
+    }
+    echo "</div>"; 
+}
+
+mysql_free_result($result);
+
+/************************END PHP for Blog 2****************************************************/
+
+
+?>
         
         <div class="w3-col s6" style="margin-left:25%" name="blogDiv">
-            <h2><a href = "#" onClick="showParagraph2()">Third Blog Entry</a></h2>
+            <!--<h2><a href = "#" onClick="showParagraph2()">Third Blog Entry</a></h2>
         
             <p id="p2">Here is some 3rd blog content it will repeat to make itself longer
             Here is some blog content it will repeat to make itself longer
@@ -374,7 +442,7 @@ mysql_free_result($result);
             Here is some blog content it will repeat to make itself longer.
             Here is some blog content it will repeat to make itself longer.
             <br>
-            <span style="color:red"> Please add Comments Here: </span>
+            <span style="color:red"> Please add Comments Here: </span>-->
             </p>
             <br> 
             <p id="txtCommentOutput2"></p>
