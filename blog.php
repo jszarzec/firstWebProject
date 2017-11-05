@@ -441,7 +441,7 @@ mysql_free_result($result);
             Here is some blog content it will repeat to make itself longer.
             Here is some blog content it will repeat to make itself longer.
             Here is some blog content it will repeat to make itself longer.
-            <br>
+            <br> Test a git commit here.
             <span style="color:red"> Please add Comments Here: </span>-->
             </p>
             <br> 
